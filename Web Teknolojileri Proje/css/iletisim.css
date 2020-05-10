@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+/**********Id Css*/
+#body {
+    background-color: aliceblue;
+    width: 100%;
+    height: 100%;
+}
+
+#navbar {
+    background-color: aliceblue;
+}
+
+#oynat {
+    text-align: center;
+    width: 50%;
+}
+
+#arrow {
+    text-align: center;
+    font-size: 80px;
+    color: aliceblue;
+}
+
+#logo {
+    font-family: 'Merienda', cursive;
+    font-size: 34px;
+}
+
+
+/********************************************************/
+/**********Class Css*/
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.container-content {
+    height: 1338px;
+    background-image: url(../img/resized_4c43d-2f46ddf81104202026e9530e_2.jpg);
+    background-size: 2457px 1488px;
+    background-repeat: space;
+    background-position: 30% 10%;
+    background-attachment: fixed;
+}
+
+.field {
+    margin: 5px 30% 5px 30%;
+    display: block;
+    width: auto;
+    height: auto;
+
+}
+
+.field-content {
+
+    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-style: solid;
+    border-top: 0px;
+    border-color: aliceblue;
+
+    padding: 40px;
+    background-color: #202020;
+    width: 100%;
+    height: auto;
+    display: table;
+}
+
+.form{
+    text-align: center;
+}
+
+.formfont {
+    color: aliceblue;
+    text-align: left;
+}
+.valu{
+    width: 100%;
+}
+.element{
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    text-align: center;
+}
+
+/********************************************************/
+/**********Media Query*/
+@media screen and (max-width: 768px) {
+    .field-content {
+        float: left;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    
+    
+    .field-content {
+        float: left;
+    }
+}
+
+/********************************************************/

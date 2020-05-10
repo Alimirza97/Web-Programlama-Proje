@@ -1,0 +1,87 @@
+*{
+    box-sizing: border-box;
+}
+
+/**********Id Css*/
+#body {
+    background-color: #131313;
+    
+}
+#navbar {
+    background-color: aliceblue;
+}
+#cocukluk{
+    color: aliceblue;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+#lise{
+    color: aliceblue;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+#logo {
+    font-family: 'Merienda', cursive;
+    font-size: 34px;
+}
+/********************************************************/
+/**********Class Css*/
+body {
+   font-family: 'Roboto Condensed', sans-serif; 
+}
+.container-content {
+    
+}
+.field{
+    margin: 5px 10% 5px 10%;
+    border-top: solid;
+    border-top-color: coral;
+    display: block;
+    width: auto;
+}
+.field-content{
+    padding: 30px;
+    background-color: #131313;
+    width: 50%;
+    height: 300px;
+    display: table;
+}
+.field-photo{
+    background-color: #131313;
+    width: 50%;
+    height: 300px;
+    
+}
+.field-photo img{
+    
+    height: 300px;
+    width: 100%;
+    padding: 20px;
+}
+/********************************************************/
+/**********Media Query*/
+@media screen and (max-width: 768px) {
+    .field-content {
+        float: none;
+        width: 100%;
+    }
+    .field-photo{
+        float: none;
+        width: 100%;
+    };
+}
+
+@media screen and (min-width: 768px) {
+    
+    .field-content {
+        float: left;
+    }
+    
+    .field-photo {
+        float: right;
+    }
+}
+/********************************************************/

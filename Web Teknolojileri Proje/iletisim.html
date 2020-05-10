@@ -1,0 +1,266 @@
+<html>
+
+<head>
+    <!-------Meta-->
+    <metas>
+        <meta charset="UTF-8">
+        <title>Ali</title>
+        <meta name="author" content="Uğur ÇELİK">
+        <meta name="keywords" content="Bilim,Sanat,Teknoloji">
+        <meta name="description" content="Plaloho'nun web sitesi. Yani Uğur ÇELİK'in.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </metas>
+    <!----------------------------------------->
+    <!-------Frameworks-->
+    <frames>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    </frames>
+    <!----------------------------------------->
+    <!-------Fontlar-->
+    <fonts>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Gugi|Sofia" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet">
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </fonts>
+    <!----------------------------------------->
+    <!-------Css Dosyaları-->
+    <css>
+        <link rel="stylesheet" href="css/iletisim.css">
+        <link rel="stylesheet" href="css/footer/footer.css">
+    </css>
+    <!----------------------------------------->
+    <!-------Scripts-->
+    <script>
+        function alanKontrol() {
+            var isim = document.forms["formiletisim"]["isim"].value;
+            var soyisim = document.forms["formiletisim"]["soyad"].value;
+            var email = document.forms["formiletisim"]["mail"].value;
+            var yorum = document.forms["formiletisim"]["yorum"].value;
+
+            var rakam = [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "0"
+            ];
+            var ozelkarakter = [",", ".", ":", ";", "!", "?", "(", ")", "[", "]", "{", "}", "…"];
+
+            /*****İsim Konrolü*/
+            if (isim == "") {
+                alert("İsim alanı Boş Bırakılamaz!");
+                return false;
+            }
+
+            var hata = false;
+            var i = 0;
+            var j = 0;
+            for (i = 0; i < 13; i++) {
+                for (j = 0; j < isim.length; j++) {
+                    if (ozelkarakter[i] == isim[j]) {
+                        alert("İsminiz Özel Karakterler İçeremez");
+                        return hata;
+                    }
+                }
+            }
+
+            for (i = 0; i < 10; i++) {
+                for (j = 0; j < isim.length; j++) {
+                    if (rakam[i] == isim[j]) {
+                        alert("İsminiz Rakamlardan Oluşamaz");
+                        return hata;
+                    }
+                }
+            }
+
+
+            /*****Soyİsim Konrolü*/
+            if (soyisim == "") {
+                alert("Soyisim alanı Boş Bırakılamaz!");
+                return false;
+            }
+            i = 0;
+            j = 0;
+            for (i = 0; i < 13; i++) {
+                for (j = 0; j < soyisim.length; j++) {
+                    if (ozelkarakter[i] == soyisim[j]) {
+                        alert("Soyisminiz Özel Karakterler İçeremez");
+                        return hata;
+                    }
+                }
+            }
+            for (i = 0; i < 10; i++) {
+                for (j = 0; j < soyisim.length; j++) {
+                    if (rakam[i] == soyisim[j]) {
+                        alert("Soyisminiz Rakamlardan Oluşamaz");
+                        return hata;
+                    }
+                }
+            }
+
+            /*****Email Konrolü*/
+            if (email == "") {
+                alert("Email alanı Boş Bırakılamaz!");
+                return false;
+            }
+            i = 0;
+            j = 0;
+            var k = 0;
+            var et = 0;
+            for (i = 0; i < email.length; i++) {
+                if (email[i] == "@") {
+                    et = 1;
+                }
+            }
+            if (et == 0) {
+                alert("Emailiniz a@a. şeklinde olmalıdır.('@' Sembolü eksikliği)");
+                return hata;
+            }
+
+            for (i = 0; i < email.length; i++) {
+
+                if ((email[i] == '@') && (i == 0)) {
+                    alert("Emailiniz a@a. şeklinde olmalıdır.('@' Sembolü öncesinde tanımlayıcı algılanmadı.)");
+                    return hata;
+                }
+            }
+
+            for (j = 0; j < 13; j++) {
+                if ((i != 0) && (email[0] == ozelkarakter[j])) {
+                    alert("Emailiniz a@a. şeklinde olmalıdır.(Email adresleri özel semboller ile başlayamaz)");
+                    return hata;
+                }
+            }
+
+            for (i = 0; i < email.length; i++) {
+                if (email[i] == '@') {
+
+                    for (k = 0; k < 13; k++) {
+                        if (email[i + 1] == ozelkarakter[k]) {
+                            alert("Emailiniz a@a. şeklinde olmalıdır.('@' Simgesinden sonra alan adı tanımlanmadı.)");
+                            return hata;
+                        }
+                    }
+                }
+            }
+
+            for (i = 0; i < email.length; i++) {
+                if (email[i] == '@') {
+                    var z;
+                    var nokta = 0;
+                    for (z = i; z < email.length; z++) {
+                        for (k = 0; k < 13; k++) {
+                            if (email[z] == ozelkarakter[1]) {
+                                nokta = 1;
+                            }
+                        }
+                    }
+                    if (nokta == 0) {
+                        alert("Emailiniz a@a. şeklinde olmalıdır.('@' Sembolünden sonra hiç '.' nokta kullanmadınız.)");
+                        return hata;
+                    }
+
+                }
+
+            }
+            if (yorum == "") {
+                alert("Yorum alanı boş bırakılamaz");
+                return hata;
+            }
+        }
+
+        function temizle() {
+            document.forms["formiletisim"]["isim"].value = "";
+            document.forms["formiletisim"]["soyad"].value = "";
+            document.forms["formiletisim"]["mail"].value = "";
+            document.forms["formiletisim"]["yorum"].value = "";
+        }
+
+    </script>
+    <!----------------------------------------->
+</head>
+
+<body id="body">
+    <!-------Navigasyon-->
+    <nav class="navbar navbar-expand-md navbar-light" id="navbar">
+        <a class="navbar-brand" href="#"><span id="logo">Ali</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Ana Sayfa</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="ozgecmis.html">Özgeçmiş</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="sehrim.html">Memleketim</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="mirasimiz.html">Mirasımız</a>
+                <li class="nav-item">
+                    <a class="nav-link active" href="iletisim.html">İletişim</a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </nav>
+    <!----------------------------------------->
+    <!-------AltMenü-->
+    <!-------İçerik-->
+    <div class="container-content">
+        <div class="field">
+            <div class="field-content">
+                <form action="gonder.php" method="post" name="formiletisim" style="width: 100%" onsubmit="return alanKontrol()">
+                    <table width="50%" border="0" bgcolor="#202020" size="2" align="center" cellpadding="5" style="color: aliceblue;">
+                        <tr>
+                            <th> Site İletişim Formu </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <pre style="color: aliceblue;">
+ADINIZ    : <input id="ad" type="text" name="isim"><br>
+SOYADINIZ : <input type="text" name="soyad"><br>
+E-MAİL    : <input type="text" name="mail"><br>
+BENİ TANIYOR MUSUNUZ ?: <input type="checkbox" value="Evet">
+Mesajınız : <br><textarea cols="30" rows="10" name="yorum" placeholder="Mesajınızı Buraya Yazınız."></textarea>
+
+<input type="button" value="TEMİZLE" onclick="temizle()" >
+<input type="submit" value="GÖNDER" >
+</pre>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------------->
+    <!-------Footer-->
+    <footer class="footer">
+        <div id="contact"><span>Ad: Ali<br></span><span>Email: <a href="mailto: almirza.hashimzada@gmail.com">almirza.hashimzada@gmail.com</a></span>
+        </div>
+        <div id="social"></div>
+    </footer>
+</body>
+
+</html>
